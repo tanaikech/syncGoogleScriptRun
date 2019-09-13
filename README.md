@@ -59,11 +59,13 @@ When you use the following sample script, please copy and paste the following sc
 <script>
 async function run() {
   for (let i = 0; i < 5; i++) {
+
     const resource = {
       gasFunction: "myFunction", // Function name
       arguments: i // Arguments for the function
     };
     const res = await syncGoogleScriptRun(resource).catch(e => {throw new Error(e)});
+
     console.log(res);
   }
 }
