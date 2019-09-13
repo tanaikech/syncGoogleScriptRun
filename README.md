@@ -36,7 +36,7 @@ Or, using jsdelivr cdn
 | syncGoogleScriptRun(object) | Run a function of Google Apps Script with the synchronous process. |
 
 - `object`: There are 2 properties.
-  - `gasFunction`: Function name.
+  - `gasFunction`: Function name of Google Apps Script side.
   - `arguments`: Arguments for the function.
 
 <a name="usage"></a>
@@ -61,7 +61,7 @@ async function run() {
   for (let i = 0; i < 5; i++) {
 
     const resource = {
-      gasFunction: "myFunction", // Function name
+      gasFunction: "myFunction", // Function name of Google Apps Script side
       arguments: i // Arguments for the function
     };
     const res = await syncGoogleScriptRun(resource).catch(e => {throw new Error(e)});
@@ -84,6 +84,17 @@ function openDialog() {
   var html = HtmlService.createHtmlOutputFromFile("index");
   SpreadsheetApp.getUi().showModalDialog(html, "sample");
 }
+```
+
+#### Result
+When the button of "Run script" is clicked, you can see the following result at the console.
+
+```
+0
+1
+2
+3
+4
 ```
 
 ---
