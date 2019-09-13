@@ -81,7 +81,7 @@ function myFunction(e) {
 }
 
 function openDialog() {
-  var html = HtmlService.createTemplateFromFile("index").evaluate();
+  var html = HtmlService.createHtmlOutputFromFile("index");
   SpreadsheetApp.getUi().showModalDialog(html, "sample");
 }
 ```
